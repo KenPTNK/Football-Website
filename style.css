@@ -1,0 +1,36 @@
+.carousel-indicators button {
+    color: black;
+}
+
+#carouselExampleIndicators {
+    background-image: url(./IMG/Nen1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgContainer {
+    background-color: rgba(0, 0, 0, 0.5); 
+    height: 100vh;
+    width: 100vh;
+    /* Add shadow background to the container */
+    padding: 20px; /* Add padding to the container */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+
+.carousel-caption{
+    padding-bottom: 80px;
+}
+
+.text{
+    color: white;
+    font-size: 30px;
+}
