@@ -75,7 +75,7 @@ function updateCarousel(data) {
         // create a tag
         const a = document.createElement("a");
 
-        let href = creatHref()
+        let href = createNewFile(team)
         a.href = href;
         a.id = "team" + index;
 
@@ -106,7 +106,7 @@ function updateCarousel(data) {
     });
 }
 
-function createNewFile() {
-    const
+function createNewFile(team) {
+    nameFile = team.name + ".html";
 }
 
