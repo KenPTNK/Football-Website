@@ -1,112 +1,68 @@
-document.addEventListener("DOMContentLoaded", async () => {
-    try {
-        const token = '1c4fc26e4a0067012f0976f7bf68ec00'
-        const link1 = 'https://api.statorium.com/api/v1/teams/';
-        const link2 = '/?season_id=1&apikey=' + token;
-
-        const fetchPromises = [];
-
-        for (let i = 1; i <= 20; i++) {
-            const teamUrl = link1 + i + link2;
-            fetchPromises.push(fetch(teamUrl).then(response => response.json()));
-        }
-
-        // Wait for all fetch requests to finish
-        const responses = await Promise.all(fetchPromises);
-
-        console.log(responses);
-
-        const data = responses.map(response => {
-            return {
-                name: response.team.teamName,
-                logo: response.team.logo,
-            };
-        });
-
-        // Populate the carousel with images
-        updateCarousel(data);
-
-    } catch (error) {
-        console.error("Error fetching images:", error);
-    }
+document.addEventListener("DOMContentLoaded", async function () {
+    let raw = await call();
+    let data = await raw.response;
+    console.log(data);
+    let leaguesCarousel = [];
+    data.forEach((value) => { leaguesCarousel.push(value.league) })
+    carousel(leaguesCarousel);
 });
 
-function updateCarousel(data) {
-    const carouselInner = document.querySelector(".carousel-inner");
-    const indicators = document.querySelector(".carousel-indicators");
+function carousel(array) {
+    let carouselIndicators = document.querySelector('.carousel-indicators');
+    let carouselInner = document.querySelector('.carousel-inner');
 
-    // Clear existing content
-    carouselInner.innerHTML = "";
-    indicators.innerHTML = "";
+    array.forEach((value, index) => {
+        // create indicators
+        let indicators = document.createElement('button');
+        indicators.type = "button";
+        indicators.setAttribute('data-bs-target', '#carouselExampleIndicators');
+        indicators.setAttribute('data-bs-slide-to', index.toString());
+        indicators.setAttribute('aria-label', `Slide ${index}`);
+        if (index == 0) {
+            indicators.classList.add('active');
+        }
+        // create inner
+        let inner = document.createElement('div');
+        inner.classList.add('carousel-item');
+        if (index == 0) {
+            inner.classList.add('active');
+        }
+        let img = document.createElement('img');
+        img.src = value.logo
+        img.classList.add('d-block', 'w-100');
 
-    data.forEach((team, index) => {
-        const imageSrc = team.logo; // Use the logo property as imageSrc
+        // create caption
+        let caption = document.createElement('div');
+        caption.classList.add('carousel-caption', 'd-none', 'd-md-block');
+        let h5 = document.createElement('h5');
+        h5.textContent = value.name;
 
-        // Create carousel div with image
-        const itemDiv = document.createElement("div");
-        // Add classes to the div
-        itemDiv.classList.add("carousel-item");
-        // Add active class to the first item
-        if (index === 0) itemDiv.classList.add("active");
+        // append varible
+        caption.appendChild(h5);
+        inner.appendChild(img);
+        inner.appendChild(caption);
+        carouselIndicators.appendChild(indicators);
+        carouselInner.appendChild(inner)
+    })
+}
 
-        // Create image element
-        const img = document.createElement("img");
-        // Add attributes to the image
-        img.src = imageSrc;
-        // Add classes to the image
-        img.classList.add("d-block", "w-100");
-        img.style.maxWidth = "20%";   // Reduce size while keeping ratio
-        img.style.padding = "auto auto auto auto";    // Center the image
-        img.style.display = "block";
-        // Add alt attribute to the image
-        img.alt = `Slide ${index + 1}`;
+async function call() {
+    try {
+        let response = await fetch('https://v3.football.api-sports.io/leagues', {
+            method: 'GET',
+            headers: {
+                "x-rapidapi-host": "v3.football.api-sports.io",
+                "x-rapidapi-key": "99ef879facec031cb5721b03daaca547"
+            }
+        });
 
-        const caption = document.createElement("div");
-        caption.classList.add("carousel-caption");
-
-        const captionText = document.createElement("h5");
-        captionText.classList.add("text");
-
-        captionText.innerHTML = team.name; // Use the name property for the caption
-
-        const container = document.createElement("div");
-        container.classList.add("imgContainer");
-
-        // create a tag
-        const a = document.createElement("a");
-
-        let href = createNewFile(team)
-        a.href = href;
-        a.id = "team" + index;
-
-        // captionText -> caption -> a -> container, img -> container, container -> itemDiv -> carouselInner
-        caption.appendChild(captionText);
-        a.appendChild(caption);
-        container.appendChild(a);
-        container.appendChild(img);
-        itemDiv.appendChild(container);
-        carouselInner.appendChild(itemDiv);
-
-        // Create carousel indicator
-        const indicator = document.createElement("button");
-        // Add attributes to the button
-        indicator.type = "button";
-        // Follow the carousel structure
-        indicator.dataset.bsTarget = "#carouselExampleIndicators";
-        indicator.dataset.bsSlideTo = index;
-        indicator.ariaLabel = `Slide ${index + 1}`;
-        // The first indicator is active and arialCurrent is true
-        if (index === 0) {
-            indicator.classList.add("active");
-            indicator.arialCurrent = "true";
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        // Append indicator to the indicators
-        indicators.appendChild(indicator);
-    });
+        let data = await response.json();
+        return data;
+    } catch (err) {
+        console.error('Fetch error:', err);
+    }
 }
-
-function createNewFile(team) {
-    nameFile = team.name + ".html";
-}
-
