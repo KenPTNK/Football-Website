@@ -1,0 +1,126 @@
+/* Reset default margin and padding */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* 🔥 Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('/IMG/a-purple-and-pink-background-with-diagonal-lines-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.logo h1 {
+    font-size: 50px;
+    font-family: 'Russo One', sans-serif;
+    background: linear-gradient(to right, #47bec9, #7576af, #8d549c, #d32283, #eb4e64, #e87c4b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🔘 Navigation Buttons */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 18px;
+    font-family: 'Russo One', sans-serif;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links button:hover {
+    background: yellow;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* ☰ Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 📱 Mobile Navigation */
+.mobile-nav {
+    display: none;
+    background-color: #2e7d32;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav.show {
+    display: block;
+}
+
+/* 🟢 Mobile Menu Buttons */
+.mobile-nav button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background: none;
+    border: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.mobile-nav button:hover {
+    background-color: yellow;
+    color: #2e7d32;
+}
+
+/* 🎠 Carousel Fix */
+.carousel-item img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
