@@ -35,10 +35,11 @@ function carousel(array) {
         img.src = value.logo;
         img.classList.add('d-block', 'w-100');
 
-        // Create caption
+        // Create c aption
         let caption = document.createElement('div');
         caption.classList.add('carousel-caption', 'd-none', 'd-md-block');
         let h5 = document.createElement('h5');
+        h5.classList.add('leagueName');
         h5.textContent = value.name;
 
         // Append elements

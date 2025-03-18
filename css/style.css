@@ -2,7 +2,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
+    background-image: url('/IMG/ảnh nền.avif');
+    background-size: cover;
+    background-position: center;
     color: white;
 }
 
@@ -108,12 +110,6 @@ body {
     color: #2e7d32;
 }
 
-/* 🎠 Carousel Fix */
-.carousel-item img {
-    max-height: 500px;
-    object-fit: cover;
-}
-
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
@@ -123,4 +119,23 @@ body {
     .menu-toggle {
         display: block;
     }
+}
+
+/* caousel */
+.carousel-item img {
+    width: auto; /* Keeps the original width */
+    height: 300px; /* Adjust this value to make the image smaller */
+    object-fit: contain; /* Ensures the full image is visible without cropping */
+    margin: 0 auto; /* Centers the image */
+    padding-top: 20px;
+}
+
+.carousel-item {
+    height: 75vh;
+}
+
+.leagueName{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
 }
