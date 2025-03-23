@@ -2,10 +2,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('/IMG/ảnh nền.avif');
-    background-size: cover;
-    background-position: center;
+    background-color: linear-gradient(90deg, #d7d5dd, #eee 30%, #eee 70%, #d7d5dd);
     color: white;
+    height: auto;
 }
 
 /* 🔥 Navbar Styles */
@@ -51,7 +50,7 @@ body {
 
 .nav-links button {
     background: none;
-    border: 2px solid white;
+    border: 2px solid #E47973;
     color: white;
     font-size: 18px;
     font-family: 'Russo One', sans-serif;
@@ -61,7 +60,7 @@ body {
 }
 
 .nav-links button:hover {
-    background: yellow;
+    background: #FEDB83;
     color: black;
     transform: scale(1.1);
 }
@@ -106,7 +105,7 @@ body {
 }
 
 .mobile-nav button:hover {
-    background-color: yellow;
+    background-color: #FEDB83;
     color: #2e7d32;
 }
 
@@ -130,8 +129,20 @@ body {
     padding-top: 20px;
 }
 
+.carousel{
+    background-image: url('/IMG/ảnh nền.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .carousel-item {
     height: 75vh;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    backdrop-filter: blur(10px); /* Adjust blur intensity */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Dark overlay */
 }
 
 .leagueName{
@@ -139,3 +150,74 @@ body {
     font-weight: bold;
     color: white;
 }
+
+/* laegue-nav */
+
+/* 🎯 League Navigation Styles */
+#league-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('/IMG/a-purple-and-pink-background-with-diagonal-lines-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border: 10px;
+}
+
+.league-nav.show {
+    display: block;
+}
+
+/* 🟢 League Nav Links */
+.league-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.league-nav li {
+    padding: 10px;
+}
+
+.league-nav a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.league-nav button {
+    background: none;
+    border: 2px solid #F4A97A;
+    color: white;
+    font-size: 18px;
+    font-family: 'Russo One', sans-serif;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    min-width: 250px;
+}
+
+.league-nav button:hover {
+    background: #FEDB83;
+    color: black;
+    transform: scale(1.1);
+}
+
+.league-nav a:hover {
+    background-color: #FEDB83;
+    color: #2e7d32;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .league-nav {
+        display: block; /* Show on mobile */
+    }
+}
+
