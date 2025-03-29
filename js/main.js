@@ -1,21 +1,52 @@
-// premierleague id = 39
-// champion league id = 2
-// bundesliga id = 78
-// laliga id = 140
-// serie a id = 135
+const key = '99ef879facec031cb5721b03daaca547';
 
 document.addEventListener("DOMContentLoaded", async function () {
     let raw = await call();
     let data = raw; // `raw` already contains parsed JSON data  
+    let premierLeague = [];
 
-    let leagues = [];
-    data.forEach((value) => { leagues.push(value.league); });
-    carousel(leagues);
+    data.forEach((value) => {
+        if (value.league.id === 39) {
+            premierLeague.push(value);
+        }
+    });
 
-    let leaguesNav = [];
-    leagues.forEach((value) => {if(value.id === 39 || value.id === 2 || value.id === 78 || value.id === 140 || value.id === 135) { leaguesNav.push(value); }});
-    leaguenavCreate(leaguesNav);
+    if (premierLeague.length > 0) {
+        let currentPremierLeague = {
+            country: premierLeague[0].country,
+            league: premierLeague[0].league,
+            seasons: premierLeague[0].seasons[14] // Assuming seasons is an array and you want the 15th element
+        };
+        // carousel(teams); // Uncomment and pass the appropriate teams array if needed
+    } else {
+        console.error("No Premier League data found.");
+    }
+    const teams = await fetchFootballTeams();
+    console.log(teams);
+    carousel(teams);
 });
+
+async function fetchFootballTeams() {
+    // const url = 'https://v3.football.api-sports.io/teams?league=39&season=2023';
+    // const options = {
+    //     method: 'GET',
+    //     headers: {
+    //         'x-rapidapi-key': '99ef879facec031cb5721b03daaca547',
+    //     }
+    // };
+    
+    try {
+        let response = await fetch("./js/premierLeague.json"); // Fixed quotes
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching football teams:', error);
+    }
+}
 
 function carousel(array) {
     let carouselIndicators = document.querySelector('.carousel-indicators');
@@ -40,7 +71,7 @@ function carousel(array) {
         }
 
         let img = document.createElement('img');
-        img.src = value.logo;
+        img.src = value.team.logo;
         img.classList.add('d-block', 'w-100');
 
         // Create caption
@@ -48,7 +79,7 @@ function carousel(array) {
         caption.classList.add('carousel-caption', 'd-none', 'd-md-block');
         let h5 = document.createElement('h5');
         h5.classList.add('leagueName');
-        h5.textContent = value.name;
+        h5.textContent = value.team.name;
 
         // Append elements
         caption.appendChild(h5);
@@ -59,52 +90,6 @@ function carousel(array) {
     });
 }
 
-function leaguenavCreate(array) {
-    console.log(array);
-    let ulnav = document.querySelector('.ul-nav');
-
-    array.forEach((value, index) => {
-        let linav = document.createElement('li');
-        let buttonnav = document.createElement('button');
-
-        // Set button text
-        buttonnav.textContent = value.name;
-
-        // Add default border for all buttons
-        buttonnav.style.border = '2px solid #F4A97A';
-
-        // Add click event listener
-        buttonnav.addEventListener('click', function() {
-            // Update all buttons to inactive border
-            document.querySelectorAll('.ul-nav button').forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.border = '2px solid #F4A97A';
-            });
-
-            // Set clicked button to active style
-            buttonnav.classList.add('active');
-            buttonnav.style.border = '2px solid #D35A86';
-
-            // Move the clicked button's <li> to the top
-            ulnav.prepend(linav);
-
-            createLeagues(value.id);
-        });
-
-        // Set the first button as active by default
-        if (index === 0) {
-            buttonnav.classList.add('active');
-            buttonnav.style.border = '2px solid #D35A86';
-        }
-
-        linav.appendChild(buttonnav);
-        ulnav.appendChild(linav);
-    });
-}
-
-async function createLeagues(id) {
-    
-}
 
 async function call() {
     try {

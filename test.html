@@ -1,39 +1,302 @@
-<!DOCTYPE html>
-<html lang="en">
+<table class="wg-table" id="wg-football-standings">
+    <thead>
+    </thead>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manchester United Player Info</title>
-    <link rel="stylesheet" href="test.css">
-</head>
+    <tbody><tr>
+        <td class="wg_header" colspan="11"><img class="wg_flag" src="https://media.api-sports.io/flags/gb-eng.svg" loading="lazy" onerror="this.style.display=&quot;none&quot;"> England: Premier League</td>
+    </tr>
 
-<body>
-    <div class="container">
-        <header>
-            <h1>Manchester United Player Info</h1>
-        </header>
-
-        <section id="playerSection">
-            <h2>Enter Player Name:</h2>
-            <input type="text" id="playerName" placeholder="Enter player name" />
-            <button id="getPlayerInfo">Get Info</button>
-
-            <div id="playerInfo"></div>
-        </section>
-
-        <section id="upcomingMatches">
-            <h2>Upcoming Matches:</h2>
-            <ul id="matchList"></ul>
-        </section>
-
-        <section id="news">
-            <h2>Highlighted News:</h2>
-            <ul id="newsList"></ul>
-        </section>
-    </div>
-
-    <script src="test.js"></script>
-</body>
-
-</html>
+                    <tr>
+                        <td class="wg_header" colspan="2"></td>
+                        <td class="wg_header wg_text_center wg_tooltip wg_tooltip_left" data-text="Matches Played">MP</td>
+                        <td class="wg_header wg_text_center wg_tooltip wg_tooltip_left" data-text="Win">W</td>
+                        <td class="wg_header wg_text_center wg_tooltip wg_tooltip_left" data-text="Draw">D</td>
+                        <td class="wg_header wg_text_center wg_tooltip wg_tooltip_left" data-text="Lose">L</td>
+                        <td class="wg_header wg_text_center wg_tooltip wg_tooltip_left wg_hide_xxs" data-text="Goals For : Goals Against">G</td>
+                        <td class="wg_header wg_text_center wg_hide_xs">+/-</td>
+                        <td class="wg_header wg_text_center wg_tooltip wg_tooltip_left" data-text="Points">P</td>
+                        <td class="wg_header wg_text_center wg_hide_xs"></td>
+                        <td class="wg_header wg_text_center wg_hide_xs"></td>
+                    </tr>
+                
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">1</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/50.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Manchester City</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">29</td>
+                    <td class="wg_text_center wg_width_20">6</td>
+                    <td class="wg_text_center wg_width_20">3</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">99:26</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">73</td>
+                    <td class="wg_text_center wg_width_20">93</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Promotion - Champions League (Group Stage)">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">2</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/40.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Liverpool</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">28</td>
+                    <td class="wg_text_center wg_width_20">8</td>
+                    <td class="wg_text_center wg_width_20">2</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">94:26</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">68</td>
+                    <td class="wg_text_center wg_width_20">92</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Promotion - Champions League (Group Stage)">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">3</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/49.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Chelsea</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">21</td>
+                    <td class="wg_text_center wg_width_20">11</td>
+                    <td class="wg_text_center wg_width_20">6</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">76:33</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">43</td>
+                    <td class="wg_text_center wg_width_20">74</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Promotion - Champions League (Group Stage)">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">4</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/47.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Tottenham</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">22</td>
+                    <td class="wg_text_center wg_width_20">5</td>
+                    <td class="wg_text_center wg_width_20">11</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">69:40</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">29</td>
+                    <td class="wg_text_center wg_width_20">71</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Promotion - Champions League (Group Stage)">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">5</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/42.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Arsenal</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">22</td>
+                    <td class="wg_text_center wg_width_20">3</td>
+                    <td class="wg_text_center wg_width_20">13</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">61:48</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">13</td>
+                    <td class="wg_text_center wg_width_20">69</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Promotion - Europa League (Group Stage)">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">6</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/33.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Manchester United</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">16</td>
+                    <td class="wg_text_center wg_width_20">10</td>
+                    <td class="wg_text_center wg_width_20">12</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">57:57</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">0</td>
+                    <td class="wg_text_center wg_width_20">58</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Promotion - Europa League (Group Stage)">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">7</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/48.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> West Ham</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">16</td>
+                    <td class="wg_text_center wg_width_20">8</td>
+                    <td class="wg_text_center wg_width_20">14</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">60:51</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">9</td>
+                    <td class="wg_text_center wg_width_20">56</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Promotion - Europa Conference League (Qualification)">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">8</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/46.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Leicester</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">14</td>
+                    <td class="wg_text_center wg_width_20">10</td>
+                    <td class="wg_text_center wg_width_20">14</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">62:59</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">3</td>
+                    <td class="wg_text_center wg_width_20">52</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">9</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/51.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Brighton</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">12</td>
+                    <td class="wg_text_center wg_width_20">15</td>
+                    <td class="wg_text_center wg_width_20">11</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">42:44</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-2</td>
+                    <td class="wg_text_center wg_width_20">51</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">10</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/39.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Wolves</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">15</td>
+                    <td class="wg_text_center wg_width_20">6</td>
+                    <td class="wg_text_center wg_width_20">17</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">38:43</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-5</td>
+                    <td class="wg_text_center wg_width_20">51</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">11</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/34.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Newcastle</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">13</td>
+                    <td class="wg_text_center wg_width_20">10</td>
+                    <td class="wg_text_center wg_width_20">15</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">44:62</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-18</td>
+                    <td class="wg_text_center wg_width_20">49</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">12</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/52.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Crystal Palace</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">11</td>
+                    <td class="wg_text_center wg_width_20">15</td>
+                    <td class="wg_text_center wg_width_20">12</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">50:46</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">4</td>
+                    <td class="wg_text_center wg_width_20">48</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">13</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/55.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Brentford</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">13</td>
+                    <td class="wg_text_center wg_width_20">7</td>
+                    <td class="wg_text_center wg_width_20">18</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">48:56</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-8</td>
+                    <td class="wg_text_center wg_width_20">46</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">14</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/66.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Aston Villa</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">13</td>
+                    <td class="wg_text_center wg_width_20">6</td>
+                    <td class="wg_text_center wg_width_20">19</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">52:54</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-2</td>
+                    <td class="wg_text_center wg_width_20">45</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">15</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/41.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Southampton</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">9</td>
+                    <td class="wg_text_center wg_width_20">13</td>
+                    <td class="wg_text_center wg_width_20">16</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">43:67</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-24</td>
+                    <td class="wg_text_center wg_width_20">40</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">16</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/45.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Everton</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">11</td>
+                    <td class="wg_text_center wg_width_20">6</td>
+                    <td class="wg_text_center wg_width_20">21</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">43:66</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-23</td>
+                    <td class="wg_text_center wg_width_20">39</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">17</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/63.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Leeds</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">9</td>
+                    <td class="wg_text_center wg_width_20">11</td>
+                    <td class="wg_text_center wg_width_20">18</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">42:79</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-37</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_win">W</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">18</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/44.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Burnley</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">7</td>
+                    <td class="wg_text_center wg_width_20">14</td>
+                    <td class="wg_text_center wg_width_20">17</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">34:53</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-19</td>
+                    <td class="wg_text_center wg_width_20">35</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_win">W</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Relegation - Championship">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">19</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/38.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Watford</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">6</td>
+                    <td class="wg_text_center wg_width_20">5</td>
+                    <td class="wg_text_center wg_width_20">27</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">34:77</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-43</td>
+                    <td class="wg_text_center wg_width_20">23</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Relegation - Championship">?</span></td>
+                </tr>
+            
+                <tr>
+                    <td class="wg_text_center wg_bolder wg_width_20">20</td>
+                    <td class="wg_nowrap"><img class="wg_logo" src="https://media.api-sports.io/football/teams/71.png" loading="lazy" onerror="this.style.display=&quot;none&quot;"> Norwich</td>
+                    <td class="wg_text_center wg_width_20">38</td>
+                    <td class="wg_text_center wg_width_20">5</td>
+                    <td class="wg_text_center wg_width_20">7</td>
+                    <td class="wg_text_center wg_width_20">26</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xxs">23:84</td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs">-61</td>
+                    <td class="wg_text_center wg_width_20">22</td>
+                    <td class="wg_text_center wg_width_90 wg_hide_xs"><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_draw">D</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span><span class="wg_form wg_form_lose">L</span></td>
+                    <td class="wg_text_center wg_width_20 wg_hide_xs"><span class="wg_info wg_tooltip wg_tooltip_left" data-text="Relegation - Championship">?</span></td>
+                </tr>
+            
+</tbody></table>
