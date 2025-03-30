@@ -17,7 +17,7 @@
 <body>
     <header class="navbar">
         <div class="logo">
-            <img class="img" src="./IMG/download.png" alt="Football Icon">
+            <img class="img" src="IMG/download.png" alt="Football Icon">
             <h1>Premier League</h1>
         </div>
         <div class="nav">
@@ -25,14 +25,20 @@
                 <li><button onclick="location.href='./index.html'">Home</button></li>
                 <li><button onclick="location.href='./standings.html'">Standings</button></li>
                 <li><button onclick="location.href='#'">Contact</button></li>
+                <li id="user-info">
+                    <button id="username-display" class="hidden"></button>
+                    <button id="logout-btn" class="hidden" onclick="logout()">Logout</button>
+                    <button id="login-btn" onclick="location.href='./login.html'">Login</button>
+                </li>
             </ul>
         </div>
+
 
         <nav class="mobile-nav" id="mobileNav">
             <ul>
                 <li><button onclick="location.href='./index.html'">Home</button></li>
-                <li><button onclick="location.href='#'">Teams</button></li>
-                <li><button onclick="location.href='./standings.html'">Standings</button></li>
+                <li><button onclick="location.href='./teams.html'">Teams</button></li>
+                <li><button onclick="location.href='#'">News</button></li>
                 <li><button onclick="location.href='#'">Contact</button></li>
             </ul>
         </nav>
