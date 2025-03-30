@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/IMG/a-purple-and-pink-background-with-diagonal-lines-vector.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.stats-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black; /* Ensures all text is black */
+}
+.stats-table th, .stats-table td {
+    padding: 12px;
+    border: none;  /* Removes all borders */
+    border-bottom: 1px solid #ddd;  /* Keeps only horizontal lines */
+}
+.stats-table th {
+    background: #f0f2f5;
+    font-weight: bold;
+}
+#team-name {
+    background-color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+.team-logo {
+    height: 20px;
+    vertical-align: middle;
+}
+.section-header {
+    background: white;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.atributes{
+    width: 120px;
+}
+
+.all{    
+    background: #f0f2f5;
+    color: #EB5B28;
+}
+
+.greater{
+    color: #32CD32;
+}
+
+.new-part{
+    background: #f0f2f5;
+}

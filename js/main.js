@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error("No Premier League data found.");
     }
     const teams = await fetchFootballTeams();
-    console.log(teams);
     carousel(teams);
 });
 
