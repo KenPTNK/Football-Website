@@ -3,7 +3,7 @@
 A football website about the Premier League: clubs, league history and standings.
 Built with plain HTML, CSS and JavaScript (Bootstrap 5) in the MindX Web Development course (2025).
 
-**Live:** https://kenptnk.github.io/premier-league/
+**Live:** https://kenptnk.github.io/Football-Website/
 
 ## Pages
 
