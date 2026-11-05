@@ -9,15 +9,15 @@ Built with plain HTML, CSS and JavaScript (Bootstrap 5) in the MindX Web Develop
 
 | Page | What it shows |
 |---|---|
-| `index.html` | Home page with a carousel and league navigation; clubs are loaded from `js/premierLeague.json` |
-| `standings.html` | The 2023 Premier League table through the API-Football standings widget |
-| `detail.html` | A club detail page |
-| `login.html` | A demo sign-in kept in `localStorage` |
+| `index.html` | Home page: league history and a carousel of club crests (from `js/premierLeague.json`) |
+| `standings.html` | The live Premier League table, with European places and relegation marked |
+| `teams.html` | Every club this season |
+| `detail.html` | One club: its record, the next five fixtures and every result this season |
+| `login.html` | A demo sign-in kept in `localStorage` (not real accounts) |
 
-Club data is cached in local JSON files (`js/premierLeague.json`, `js/bundesliga.json`, `js/data.json`)
-so the pages do not spend API calls.
+Live data comes from ESPN's public standings and schedule feeds, which need no API key
+and can be called straight from the browser.
 
 ## Run locally
 
 Serve the folder with any static server, for example `npx serve .`
-The standings widget needs your own API-Football key in `standings.html`.

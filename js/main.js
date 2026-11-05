@@ -1,6 +1,7 @@
 const key = '99ef879facec031cb5721b03daaca547';
 
 document.addEventListener("DOMContentLoaded", async function () {
+    if (!document.querySelector('.carousel-inner')) return; // only the home page has the carousel
     const teams = await fetchFootballTeams();
     carousel(teams);
 });

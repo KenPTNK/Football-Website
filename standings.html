@@ -16,14 +16,15 @@
 <body>
     <header class="navbar">
         <div class="logo">
-            <img class="img" src="IMG/download.png" alt="Football Icon">
+            <img class="img" src="IMG/download.png" alt="">
             <h1>Premier League</h1>
         </div>
         <div class="nav">
             <ul class="nav-links">
                 <li><button onclick="location.href='./index.html'">Home</button></li>
                 <li><button onclick="location.href='./standings.html'">Standings</button></li>
-                <li><button onclick="location.href='#'">Contact</button></li>
+                <li><button onclick="location.href='./teams.html'">Teams</button></li>
+                <li><button onclick="location.href='#contact'">Contact</button></li>
                 <li id="user-info">
                     <button id="username-display" class="hidden"></button>
                     <button id="logout-btn" class="hidden" onclick="logout()">Logout</button>
@@ -32,17 +33,17 @@
             </ul>
         </div>
 
-
-        <nav class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
             <ul>
                 <li><button onclick="location.href='./index.html'">Home</button></li>
+                <li><button onclick="location.href='./standings.html'">Standings</button></li>
                 <li><button onclick="location.href='./teams.html'">Teams</button></li>
-                <li><button onclick="location.href='#'">News</button></li>
-                <li><button onclick="location.href='#'">Contact</button></li>
+                <li><button onclick="location.href='#contact'">Contact</button></li>
+                <li><button onclick="location.href='./login.html'">Login</button></li>
             </ul>
         </nav>
 
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu" aria-controls="mobileNav">☰</button>
     </header>
     <main class="standings">
         <h1>Premier League Table</h1>
@@ -68,28 +69,29 @@
         <p class="standings-source">Data: ESPN</p>
     </main>
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-container">
             <div class="footer-section about text">
                 <h2>About Us</h2>
-                <p>Your go-to source for football news, match updates, and player stats.</p>
+                <p>A fan site for the Premier League: its history, the live table and every club's season so far.</p>
             </div>
             <div class="footer-section links text">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Standings</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./standings.html">Standings</a></li>
+                    <li><a href="./teams.html">Teams</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
                 <h2>Contact Us</h2>
-                <p>Email: contact@footballsite.com</p>
-                <p>Phone: +123 456 789</p>
+                <p>Found a bug or have an idea? <a href="https://github.com/KenPTNK/Football-Website/issues">Open an issue on GitHub</a>.</p>
+                <p class="footer-note">Match data from ESPN. Not affiliated with the Premier League.</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/premierleague"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/premierleague"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/premierleague" aria-label="Premier League on Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/premierleague" aria-label="Premier League on YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/premierleague" aria-label="Premier League on Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/KenPTNK/Football-Website" aria-label="Source code on GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
