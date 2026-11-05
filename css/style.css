@@ -414,3 +414,131 @@ footer {
     margin-left: 0;
     margin-right: 0;
 }
+
+/* Standings table (standings.html) */
+.standings {
+    background-image: url('../IMG/a-purple-and-pink-background-with-diagonal-lines-vector.jpg');
+    background-size: cover;
+    padding: 40px 16px 48px;
+    min-height: 60vh;
+}
+
+.standings h1 {
+    text-align: center;
+    background: linear-gradient(to right, #47bec9, #7576af, #8d549c, #d32283, #eb4e64, #e87c4b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 44px;
+    margin-bottom: 4px;
+}
+
+.standings-meta,
+.standings-source {
+    text-align: center;
+    color: #f3d7e4;
+}
+
+.standings-source {
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.standings-wrap {
+    max-width: 860px;
+    margin: 20px auto 0;
+    overflow-x: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+}
+
+.standings-table th,
+.standings-table td {
+    padding: 10px 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.standings-table thead th {
+    color: #FEDB83;
+    border-bottom: 2px solid #E47973;
+}
+
+.standings-table abbr {
+    text-decoration: none;
+}
+
+.standings-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* coloured stripe marks European places and relegation */
+    box-shadow: inset 4px 0 0 var(--zone, transparent);
+}
+
+.standings-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.standings-table .club {
+    text-align: left;
+}
+
+.standings-table td.club {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* light disc so dark crests (e.g. Spurs) stay visible on the dark table */
+.standings-table td.club img {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 2px;
+    box-sizing: content-box;
+}
+
+.standings-table .pts {
+    font-weight: bold;
+}
+
+.standings-legend {
+    max-width: 860px;
+    margin: 14px auto 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.standings-legend li::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 6px;
+    background: var(--zone);
+}
+
+@media (max-width: 576px) {
+    .standings h1 {
+        font-size: 32px;
+    }
+
+    .standings-table th,
+    .standings-table td {
+        padding: 8px 6px;
+    }
+
+    .standings-table .wdl {
+        display: none;
+    }
+}
