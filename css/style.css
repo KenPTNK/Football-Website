@@ -43,6 +43,8 @@ body {
 .nav-links {
     display: flex;
     gap: 20px;
+    list-style: none;
+    align-items: center;
     padding: 0;
     margin: 0;
 }
@@ -401,4 +403,14 @@ footer {
     font-size: 12px;
     border-top: 1px solid #444;
     padding-top: 10px;
+}
+/* Bootstrap 5 has no .hidden; the navbar login/logout toggle relies on it */
+.hidden {
+    display: none !important;
+}
+
+/* Bootstrap's .row has negative side margins, which made the page scroll sideways */
+.intro > .row {
+    margin-left: 0;
+    margin-right: 0;
 }

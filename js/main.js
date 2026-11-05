@@ -1,26 +1,6 @@
 const key = '99ef879facec031cb5721b03daaca547';
 
 document.addEventListener("DOMContentLoaded", async function () {
-    let raw = await call();
-    let data = raw; // `raw` already contains parsed JSON data  
-    let premierLeague = [];
-
-    data.forEach((value) => {
-        if (value.league.id === 39) {
-            premierLeague.push(value);
-        }
-    });
-
-    if (premierLeague.length > 0) {
-        let currentPremierLeague = {
-            country: premierLeague[0].country,
-            league: premierLeague[0].league,
-            seasons: premierLeague[0].seasons[14] // Assuming seasons is an array and you want the 15th element
-        };
-        // carousel(teams); // Uncomment and pass the appropriate teams array if needed
-    } else {
-        console.error("No Premier League data found.");
-    }
     const teams = await fetchFootballTeams();
     carousel(teams);
 });
@@ -50,6 +30,7 @@ async function fetchFootballTeams() {
 function carousel(array) {
     let carouselIndicators = document.querySelector('.carousel-indicators');
     let carouselInner = document.querySelector('.carousel-inner'); // Fixed typo
+    if (!carouselIndicators || !carouselInner) return; // standings/login pages have no carousel
 
     array.forEach((value, index) => {
         // Create indicators
@@ -89,28 +70,6 @@ function carousel(array) {
     });
 }
 
-
-async function call() {
-    try {
-        // let response = await fetch('https://v3.football.api-sports.io/leagues', {
-        //     method: 'GET',
-        //     headers: {
-        //         "x-rapidapi-host": "v3.football.api-sports.io",
-        //         "x-rapidapi-key": "99ef879facec031cb5721b03daaca547"
-        //     }
-        // });
-        let response = await fetch("./js/data.json"); // Fixed quotes
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        let data = await response.json();
-        return data;
-    } catch (err) {
-        console.error('Fetch error:', err);
-    }
-}
 
 function toggleMenu() {
     const mobileNav = document.getElementById('mobileNav');
