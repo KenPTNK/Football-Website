@@ -32,6 +32,7 @@ function crest(team) {
 function resultFor(comp, teamId) {
     const us = comp.competitors.find(c => c.team.id === teamId);
     const them = comp.competitors.find(c => c.team.id !== teamId);
+    if (!us?.score || !them?.score) return null; // e.g. an awarded match with no score
     const diff = Number(us.score.value) - Number(them.score.value);
     return diff > 0 ? ['W', 'Won'] : diff < 0 ? ['L', 'Lost'] : ['D', 'Drawn'];
 }
@@ -53,17 +54,18 @@ function matchRow(event, teamId) {
     awaySide.append(crest(away.team), el('span', away.team.displayName));
 
     const middle = played
-        ? `${home.score.displayValue} – ${away.score.displayValue}`
+        ? `${home.score?.displayValue ?? '–'} – ${away.score?.displayValue ?? '–'}`
         : date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
     row.append(homeSide, el('span', middle, played ? 'match-score' : 'match-score upcoming'), awaySide);
 
-    if (played) {
-        const [letter, label] = resultFor(comp, teamId);
+    const result = played && resultFor(comp, teamId);
+    if (result) {
+        const [letter, label] = result;
         const badge = el('span', letter, `result result-${letter}`);
         badge.title = label;
         badge.setAttribute('aria-label', label);
         row.appendChild(badge);
-    } else {
+    } else if (!played) {
         row.appendChild(el('span', comp.venue ? comp.venue.fullName : '', 'match-venue'));
     }
     return row;
@@ -115,7 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const upcoming = (fixtures.events || [])
-            .filter(e => e.competitions[0].status.type.state === 'pre')
+            .filter(e => e.competitions[0].status.type.state !== 'post')
             .sort((a, b) => new Date(a.date) - new Date(b.date))
             .slice(0, UPCOMING_SHOWN);
         if (upcoming.length) {
